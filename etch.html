@@ -80,6 +80,11 @@
                         container.style.setProperty('grid-template-columns', 'repeat(' + newValue + ', 1fr)')
                         container.style.setProperty('grid-template-rows', 'repeat(' + newValue + ', 1fr)')
                         container.appendChild(newSquares);
+
+                        newSquares.addEventListener('mouseover', function() {
+                        newSquares.style.cssText = 'background: yellow';
+                        newSquares.style.border = '0.25px solid black';
+                })
                         
                     }
                 });

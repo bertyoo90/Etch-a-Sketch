@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="etch.css">
+    <title>Document</title>
+</head>
+<body>
+    <input id="btn-clear"  type="button" value="Clear Page!">
+    <br>
+    <div id="container">
+ 
+        
+    </div>
+
+    <script>
+
+        let container = document.getElementById('container');
+        let clearPage = document.getElementById('btn-clear');
+
+        //function to create 16x16 grid
+        function gridSquares(cubes) {
+            
+            for(let x = 0; x < cubes; x++){
+                let squares = document.createElement('div');
+                squares.className = 'grid-square';
+                squares.style.cssText = 'background: #eee';
+                squares.style.border = '0.25px solid black';
+                container.appendChild(squares);
+
+                //on-click event to get the etch started
+                squares.addEventListener('mouseover', function() {
+                    squares.style.cssText = 'background: yellow';
+                    squares.style.border = '0.25px solid black';
+                })
+
+                
+            }
+                //btn function
+                    document.getElementById('btn-clear').addEventListener('click', () => {
+                    //returns the nodeList
+                    //let childrenContainer = [document.getElementById('container').childNodes];
+                    //returns the HTMLCollection
+                    //let childrenContainer = Array.from(document.getElementById("container").childNodes);
+                    function removeAllChildNodes(parent) {
+                        while(parent.firstChild) {
+                            parent.removeChild(parent.firstChild);
+                        }
+                    }
+                    let container = document.querySelector('#container');
+                    removeAllChildNodes(container);
+                    //Doesn't return anything
+                    //let childrenContainer = document.querySelectorAll("container > *");
+                    //childrenContainer.forEach(function(item){
+                    //This forEach works
+                    //document.querySelectorAll('.grid-square').forEach(function(item)
+                    //This forEach works also
+                    //document.getElementById('container').childNodes.forEach(function(item){
+                          
+                    //console.log(item);
+                    //childrenContainer.parentNode.removeChild(childrenContainer);
+                    let newDimension = prompt('Enter grid dimensions ranging from 2 through 100', ' ');
+                    let newValue = parseInt(newDimension);
+                    let newGrid = parseInt(newDimension * newDimension);
+                
+                   
+                
+
+                    /*let gridParent = document.getElementById('container');
+                    while(container.hasChildNodes()){
+                    container.removeChild(gridParent.firstChild)
+                    }*/
+                
+                    for (let i = 1; i <= newGrid; i++) {
+                        let newSquares = document.createElement('div');
+                        newSquares.className = 'new-grid';   
+                        newSquares.style.cssText = 'background: #eee';
+                        newSquares.style.border = '0.25px solid black';
+                        container.style.display = 'grid';
+                        container.style.setProperty('grid-template-columns', 'repeat(' + newValue + ', 1fr)')
+                        container.style.setProperty('grid-template-rows', 'repeat(' + newValue + ', 1fr)')
+                        container.appendChild(newSquares);
+                        
+                    }
+                });
+        }
+        
+        
+        gridSquares(256);
+
+
+    </script>
+</body>
+</html>

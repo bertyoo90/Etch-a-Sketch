@@ -1,0 +1,21 @@
+#container {
+    height: 98vh;
+    display: grid;
+    border: 0.25px; solid black;
+    /*background: #eee;*/
+    grid-template-columns: repeat(16, 1fr); 
+    grid-template-rows: repeat(16, 1fr);
+}
+
+/*.grid-square {
+    border: 0.25px solid black;
+    background: #eee;
+
+}*/
+
+#btn-clear {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid black;
+}

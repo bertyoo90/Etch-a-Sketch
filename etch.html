@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="etch.css">
-    <title>Document</title>
+    <title>Etch-a-Sketch</title>
 </head>
 <body>
     <input id="btn-clear"  type="button" value="Clear Page!">
+    <h1 id="header">Etch-a-Sketch</h1>
     <br>
-    <div id="container">
- 
-        
+    <div id="container">       
     </div>
 
     <script>
@@ -25,13 +24,13 @@
                 let squares = document.createElement('div');
                 squares.className = 'grid-square';
                 squares.style.cssText = 'background: #eee';
-                squares.style.border = '0.25px solid black';
+                //squares.style.border = '0.25px solid black';
                 container.appendChild(squares);
 
                 //on-click event to get the etch started
                 squares.addEventListener('mouseover', function() {
                     squares.style.cssText = 'background: yellow';
-                    squares.style.border = '0.25px solid black';
+                    //squares.style.border = '0.25px solid black';
                 })
 
                 
@@ -59,7 +58,7 @@
                           
                     //console.log(item);
                     //childrenContainer.parentNode.removeChild(childrenContainer);
-                    let newDimension = prompt('Enter grid dimensions ranging from 2 through 100', ' ');
+                    let newDimension = prompt('Enter a new number from 2 through 100', ' ');
                     let newValue = parseInt(newDimension);
                     let newGrid = parseInt(newDimension * newDimension);
                 
@@ -75,7 +74,7 @@
                         let newSquares = document.createElement('div');
                         newSquares.className = 'new-grid';   
                         newSquares.style.cssText = 'background: #eee';
-                        newSquares.style.border = '0.25px solid black';
+                        //newSquares.style.border = '0.25px solid black';
                         container.style.display = 'grid';
                         container.style.setProperty('grid-template-columns', 'repeat(' + newValue + ', 1fr)')
                         container.style.setProperty('grid-template-rows', 'repeat(' + newValue + ', 1fr)')
@@ -83,7 +82,7 @@
 
                         newSquares.addEventListener('mouseover', function() {
                         newSquares.style.cssText = 'background: yellow';
-                        newSquares.style.border = '0.25px solid black';
+                        //newSquares.style.border = '0.25px solid black';
                 })
                         
                     }

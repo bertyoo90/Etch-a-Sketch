@@ -1,22 +1,25 @@
+html, body {
+    height: auto;
+}
+
 body {
-    position: relative;
-    height: 700px;
+    /*position: relative;*/
+    height: 650px;
+    width: 98%;
+    color: #fff;
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    background-size: 400% 400%; 
+    animation: change 10s ease-in-out infinite;
     
 }
 
-#header {
-    font-family: sans-serif;
-    position: absolute;
-    top: 100px;
-    left: 45%;
-}
 #container {
-    top: 250px;
+    top: 180px;
     position: absolute;
-    left: 38%;
+    left: 31%;
     margin: 0 auto;
-    height: 500px;
-    width: 500px;
+    height: 450px;
+    width: 450px;
     display: grid;
     border: 2px solid black;
     /*background: #eee;*/
@@ -24,16 +27,107 @@ body {
     grid-template-rows: repeat(16, 1fr);
 }
 
-/*.grid-square {
-    border: 0.25px solid black;
-    background: #eee;
-
-}*/
+#header {
+    top: -5px;
+    font-size: 50px;
+    font-family: 'Cookie', cursive;
+    position: absolute;
+    left: 42%;
+    
+}
 
 #btn-clear {
     position: absolute;
-    top: 220px;
-    left: 38%;
-    justify-content: center;
-    align-items: center;
+    top: 150px;
+    left: 32%;
+    text-transform: uppercase;
+    background: #fff;
+    padding: 7px;
+    border: 4px solid #494949;
+    display: inline-block;
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 13px;
 }
+
+#btn-clear:hover, #btn-random-color:hover, #btn-eraser:hover, #color-picker:hover {
+    color: #fff;
+    background: #f6b93b;
+    border-color: #f6b93b;
+    transition: all 0.4s ease 0s;
+}
+
+#btn-random-color {
+    position: absolute;
+    top: 150px;
+    left: 40%;
+    text-transform: uppercase;
+    background: #fff;
+    padding: 7px;
+    border: 4px solid #494949;
+    display: inline-block;
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 13px;
+
+}
+
+#btn-eraser {
+    position: absolute;
+    top: 150px;
+    left: 51%;
+    text-transform: uppercase;
+    background: #fff;
+    padding: 7px;
+    border: 4px solid #494949;
+    display: inline-block;
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 13px;
+
+}
+
+#color-picker {
+    position: absolute;
+    top: 149px;
+    left: 61%;
+    text-transform: uppercase;
+    background: #fff;
+    padding: 5px;
+    border: 4px solid #494949;
+    display: inline-block;
+
+}
+
+#btn-eraser, #color-picker, #btn-random-color, #btn-clear {
+    top: 100px;
+    
+}
+
+#color-picker-text {
+    position: absolute;
+    top: 133px;
+    left: 60.5%;
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 14px;
+} 
+
+#footer {
+    position: absolute;
+    top: 95%;
+    left: 31%;
+    font-family: "Copperplate", Times, serif;
+    letter-spacing: 2px;
+
+@keyframes change {
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
+
+/* MEDIA QUERIES */
+
+

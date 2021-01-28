@@ -9,7 +9,8 @@ body {
     color: #fff;
     background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
     background-size: 400% 400%; 
-    animation: change 10s ease-in-out infinite;
+    animation: change 6s ease-in-out infinite;
+   
     
 }
 
@@ -115,7 +116,7 @@ body {
     left: 31%;
     font-family: "Copperplate", Times, serif;
     letter-spacing: 2px;
-
+}
 @keyframes change {
     0%{
         background-position: 0 50%;
@@ -130,4 +131,10 @@ body {
 
 /* MEDIA QUERIES */
 
+@media (min-width: 1350px) {
+    #container {
+        height: 550px;
+        width: 550px;
+    }
+}
 
